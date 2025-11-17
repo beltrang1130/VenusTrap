@@ -1,0 +1,292 @@
+/* 1rem igual a 16px segun internet xd */
+
+body {
+    font-family: Arial;
+    margin: 0;
+    /* pagina usada para el gradeint https://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+45,000000+56,000000+56,111111+60,2b2b2b+76,1c1c1c+91,131313+100 */
+    background-image: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 45%,#000000 56%,#000000 56%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+    color: #ffffff;
+    min-height: 100%;
+    /* vi en un tutorial que esto evita el desborde horizontal en móvil */
+    overflow-x: hidden; 
+}
+
+.contenedor_principal {
+    background-image: url('/imgs/imgendefondo.png');
+    background-size: cover; 
+    background-position: center bottom;
+    min-height: 85rem; 
+    position: relative;
+    
+    /* use flex para centrar casi todo jeje */
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+}
+
+/* sombra para la fotico del fondo */
+.capa_oscura {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.60); 
+    z-index: 1; 
+    padding-bottom: 3.125rem; /* 50px */
+}
+
+/* limita el ancho y centra el contenido principal */
+.contenedor_centrado {
+    max-width: 1200px;
+    width: 96%; 
+    margin: 0 auto;
+    padding: 0 1.25rem; 
+    position: relative; 
+    z-index: 2; 
+}
+
+
+.barra_navegacion {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: wrap; 
+    padding: 1.25rem 0; /* 20px */
+}
+
+.logotipo {
+    font-weight: bold;
+    font-size: 1.2rem; 
+    margin-right: 1.25rem; /* 20px */
+}
+
+.menu_enlaces {
+    background-color: rgba(40, 40, 40, 0.7);
+    padding: 0.625rem 1.25rem; 
+    border-radius: 0.75rem; /* 12px */
+    max-width: 100%; 
+}
+
+.lista_navegacion {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    white-space: nowrap; 
+    gap: 1.875rem; /* 30px */
+}
+
+.lista_navegacion li {
+    display: inline; 
+}
+
+.lista_navegacion a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 0.3125rem 0.625rem; /* 5px 10px */
+}
+
+.lista_navegacion .activo {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 0.5rem; /* 8px */
+}
+
+.iconos_derecha button {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    margin-left: 0.9375rem; /* 15px */
+    font-size: 1.2rem;
+}
+
+.seccion_contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.875rem; /* 30px */
+    padding-top: 5rem; /* 80px */
+    padding-bottom: 5rem; /* 80px */
+}
+
+.titulo_principal h1 {
+    font-size: 3.5rem; 
+    line-height: 1.1;
+    font-weight: 800; 
+}
+
+.titulo_principal p {
+    color: #e0e0e0;
+}
+
+
+.tarjeta_reseña {
+    background-color: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem; /* 16px */
+
+    padding: 1.875rem; /* 30px */
+
+    margin-top: 3.125rem; /* 50px */
+    /* Ancho máximoen porcentaje para que se adapte jeje */
+    max-width: 90%; 
+}
+
+.encabezado_reseña {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem; /* 15px */
+}
+
+.avatar_usuario {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%; 
+    padding: 0.625rem; /* 10px */
+}
+
+.estrellas {
+    color: #fdd835; 
+    font-size: 1.2rem;
+}
+
+.cita {
+    margin-top: 0.9375rem; /* 15px */
+    font-style: italic;
+    color: #ccc;
+}
+
+
+.tarjetas_producto {
+    display: flex;
+    flex-direction: column; 
+    gap: 1.875rem; /* 30px */
+    margin-top: 1.875rem; /* 30px */
+}
+
+.tarjeta_item {
+    background-color: rgba(40, 40, 40, 0.7);
+    padding: 1.5625rem; /* 25px */
+    border-radius: 1rem; /* 16px */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.info_producto {
+    /* Contenedor de texto y botón */
+    max-width: 60%; 
+}
+
+.tarjeta_item h3 {
+    font-size: 2rem; 
+    margin-top: 0.3125rem; /* 5px */
+    font-weight: 700;
+}
+
+.tarjeta_item .categoria {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+.tarjeta_item img {
+    /* Max ancho de la imagen */
+    max-width: 35%; 
+    height: auto;
+    border-radius: 0.5rem; /* 8px */
+    margin-left: 0.9375rem; /* 15px */
+}
+
+.boton_compra {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.625rem 1.5625rem; /* 10px 25px */
+    border-radius: 1.25rem; /* 20px */
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.9375rem; /* 15px */
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3); /* 4px 10px */
+}
+
+.boton_compra:hover{
+ background-color: rgba(129, 154, 116, 0.85); 
+}
+
+
+/* Estilos para el Footer */
+
+.pie_pagina {
+    background-color: #000; 
+    padding: 1.25rem 0; 
+    text-align: center;
+    font-size: 0.8rem;
+    z-index: 3; 
+    width: 100%; 
+}
+
+.pie_pagina p {
+    color: #ccc;
+    margin: 0;
+}
+
+
+/* queda encima de la capa oscura informacion extraida de https://www.w3schools.com/css/css3_flexbox_responsive.asp*/
+@media (max-width: 1024px) {
+
+    .barra_navegacion {
+     
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 0.625rem; /* 10px */
+        width: 100%;
+    }
+    
+    .menu_enlaces {
+       
+        background-color: transparent;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .lista_navegacion {
+       
+        width: 100%; 
+        flex-wrap: wrap; 
+        gap: 0.5rem; 
+    }
+    
+    .seccion_contenido {
+        grid-template-columns: 1fr; 
+        padding-top: 2.5rem; /* 40px */
+    }
+
+    .titulo_principal h1 {
+        font-size: 2.5rem; 
+    }
+    
+    .tarjeta_reseña {
+        margin-top: 1.875rem; /* 30px */
+    }
+    
+    .tarjetas_producto {
+        margin-top: 0; 
+    }
+    
+    .tarjeta_item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .tarjeta_item img {
+        margin-top: 1.25rem; /* 20px */
+        align-self: flex-end; 
+    }
+    
+    .iconos_derecha {
+        
+        align-self: flex-end; 
+    }
+}

@@ -1,0 +1,206 @@
+/* 1rem igual a 16px segun internet xd */
+html {
+    font-size: 16px; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* pagina usada para el gradeint https://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+45,000000+56,000000+56,111111+60,2b2b2b+76,1c1c1c+91,131313+100 */
+    background-image: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 45%,#000000 56%,#000000 56%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+    color: #ffffff;
+    min-height: 100%;
+    overflow-x: hidden; 
+}
+
+.contenedor_principal {
+    background-image: url('/imgs/imgendefondo.png');
+    background-size: cover; 
+    background-position: center bottom;
+    min-height: 85rem; 
+    position: relative;
+    
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+}
+
+/* sombra para la fotico del fondo */
+.capa_oscura {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.60); 
+    z-index: 1; 
+    padding-bottom: 3.125rem; /* 50px */
+}
+
+/* limita el ancho y centra el contenido principal */
+.contenedor_centrado {
+    max-width: 1200px;
+    width: 96%; 
+    margin: 0 auto;
+    padding: 0 1.25rem; 
+    position: relative; 
+    z-index: 2; 
+}
+
+
+.barra_navegacion {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: nowrap; 
+    padding: 1.25rem 0; /* 20px */
+}
+
+.logotipo {
+    font-weight: bold;
+    font-size: 1.2rem; 
+    margin-right: 1.25rem; /* 20px */
+}
+
+.menu_enlaces {
+    background-color: rgba(40, 40, 40, 0.7);
+    padding: 0.625rem 1.25rem; 
+    border-radius: 0.75rem; /* 12px */
+    max-width: 100%; 
+}
+
+.lista_navegacion {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    white-space: nowrap; 
+    gap: 1.875rem; /* 30px */
+}
+
+.lista_navegacion li {
+    display: inline; 
+}
+
+.lista_navegacion a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 0.3125rem 0.625rem; /* 5px 10px */
+}
+
+.lista_navegacion .activo {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 0.5rem; /* 8px */
+}
+
+.iconos_derecha button {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    margin-left: 0.9375rem; /* 15px */
+    font-size: 1.2rem;
+}
+
+
+.seccion_informacion {
+    padding-top: 5rem; /* 80px */
+    padding-bottom: 5rem; /* 80px */
+    
+    max-width: 100%; 
+}
+
+.seccion_informacion .titulo_principal {
+    font-size: 3.5rem; 
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 3.125rem; /* 50px */
+}
+
+.lista_opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* 20px entre cada opción */
+}
+
+.opcion_item {
+    /* Estilo del botón/opción grande */
+    background-color: rgba(40, 40, 40, 0.85); 
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.875rem; /* 20px 30px */
+    border-radius: 3rem; /* 16px */
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    backdrop-filter: blur(4px); 
+    transition: background-color 0.3s;
+}
+
+.opcion_item:hover {
+    background-color: rgba(60, 60, 60, 0.85); 
+}
+
+.icono_flecha {
+    font-size: 1.5rem;
+    color: #aaa;
+}
+
+
+/* Reglas para el Footer */
+.pie_pagina {
+    background-color: #000; 
+    padding: 1.25rem 0; 
+    text-align: center;
+    font-size: 0.8rem;
+    z-index: 3; 
+    width: 100%; 
+}
+
+.pie_pagina p {
+    color: #ccc;
+    margin: 0;
+}
+
+
+
+
+@media (max-width: 1024px) {
+    
+    .seccion_informacion {
+
+        max-width: 100%; 
+    }
+    
+    .seccion_informacion .titulo_principal {
+        font-size: 2.5rem;
+    }
+    
+    .barra_navegacion {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 0.625rem; /* 10px */
+        width: 100%;
+    }
+    
+    .menu_enlaces {
+        background-color: transparent;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .lista_navegacion {
+        width: 100%; 
+        flex-wrap: wrap; 
+        gap: 0.5rem; 
+    }
+    
+    .iconos_derecha {
+        align-self: flex-end; 
+    }
+}

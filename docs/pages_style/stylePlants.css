@@ -1,0 +1,246 @@
+/* 1rem igual a 16px segun internet xd */
+html {
+    font-size: 16px; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* pagina usada para el gradeint https://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+45,000000+56,000000+56,111111+60,2b2b2b+76,1c1c1c+91,131313+100 */
+    background-image: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 45%,#000000 56%,#000000 56%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+    color: #ffffff;
+    min-height: 100%;
+    overflow-x: hidden; 
+}
+
+.contenedor_principal {
+    background-image: url('/imgs/imgendefondo.png');
+    background-size: cover; 
+    background-position: center bottom;
+    /* La altura aqui la tuve que cambiar porque el valor de las tarjetas me movia el footer. */
+    min-height: 120rem; 
+    position: relative;
+    
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+}
+
+/* sombra para la fotico del fondo */
+.capa_oscura {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.60); 
+    z-index: 1; 
+    padding-bottom: 3.125rem; /* 50px */
+}
+
+/* limita el ancho y centra el contenido principal */
+.contenedor_centrado {
+    max-width: 1200px;
+    width: 96%; 
+    margin: 0 auto;
+    padding: 0 1.25rem; 
+    position: relative; 
+    z-index: 2; 
+}
+
+
+.barra_navegacion {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: nowrap; 
+    padding: 1.25rem 0; /* 20px */
+}
+
+.logotipo {
+    font-weight: bold;
+    font-size: 1.2rem; 
+    margin-right: 1.25rem; /* 20px */
+}
+
+.menu_enlaces {
+    background-color: rgba(40, 40, 40, 0.7);
+    padding: 0.625rem 1.25rem; 
+    border-radius: 0.75rem; /* 12px */
+    max-width: 100%; 
+}
+
+.lista_navegacion {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    white-space: nowrap; 
+    gap: 1.875rem; /* 30px */
+}
+
+.lista_navegacion li {
+    display: inline; 
+}
+
+.lista_navegacion a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 0.3125rem 0.625rem; /* 5px 10px */
+}
+
+.lista_navegacion .activo {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 0.5rem; /* 8px */
+}
+
+.iconos_derecha button {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    margin-left: 0.9375rem; /* 15px */
+    font-size: 1.2rem;
+}
+
+
+.seccion_catalogo {
+    padding-top: 5rem; /* 80px */
+    padding-bottom: 8rem; /* 128px */
+}
+
+.titulo_catalogo {
+    font-size: 3.5rem; 
+    font-weight: 800;
+    margin-bottom: 3.125rem; /* 50px */
+}
+
+.cuadricula_plantas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.875rem; /* 30px de separación horizontal y vertical */
+}
+
+.tarjeta_planta {
+    /* cristal efcto */
+    background-color: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem; /* 24px */
+    
+    padding: 0.6rem; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; 
+    
+    align-items: center; 
+    text-align: center; 
+}
+
+.nombre_planta {
+    font-size: 1.875rem; /* 30px */
+    font-weight: 700;
+    margin: 0;
+}
+
+.descripcion_planta {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 0.625rem; /* 10px */
+    order: 1; 
+}
+
+.tarjeta_planta img {
+    max-width: 70%; 
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1.25rem auto; /* 20px de margen vertical, centrado horizontalmente */
+    order: 2; 
+}
+
+.info_compra {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0; 
+    margin-top: auto; 
+    order: 3; 
+    width: 100%;
+    padding-top: 0.625rem; /* 10px */
+}
+
+.precio {
+    font-size: 1.5rem; /* 24px */
+    font-weight: bold;
+}
+
+.boton_agregar {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.625rem 1.25rem; /* 10px 20px */
+    border-radius: 1.5rem; /* 24px */
+    font-weight: bold;
+    cursor: pointer;
+}
+.boton_agregar:hover{
+ background-color: rgba(129, 154, 116, 0.85); 
+}
+
+/* Reglas para el Footer */
+.pie_pagina {
+    background-color: #000; 
+    padding: 1.25rem 0; 
+    text-align: center;
+    font-size: 0.8rem;
+    z-index: 3; 
+    width: 100%; 
+}
+
+.pie_pagina p {
+    color: #ccc;
+    margin: 0;
+}
+
+
+@media (max-width: 1024px) {
+    
+    .cuadricula_plantas {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .barra_navegacion {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 0.625rem; /* 10px */
+        width: 100%;
+    }
+    
+    .menu_enlaces {
+        background-color: transparent;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .lista_navegacion {
+        width: 100%; 
+        flex-wrap: wrap; 
+        gap: 0.5rem; 
+    }
+    
+    .iconos_derecha {
+        align-self: flex-end; 
+    }
+}
+
+@media (max-width: 600px) {
+    .cuadricula_plantas {
+        grid-template-columns: 1fr;
+    }
+    
+    .titulo_catalogo {
+        font-size: 2.5rem;
+    }
+}
