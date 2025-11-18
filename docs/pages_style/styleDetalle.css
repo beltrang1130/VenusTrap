@@ -1,0 +1,300 @@
+/* 1rem igual a 16px segun internet xd */
+html {
+    font-size: 16px; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* pagina usada para el gradeint https://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+45,000000+56,000000+56,111111+60,2b2b2b+76,1c1c1c+91,131313+100 */
+    background-image: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 45%,#000000 56%,#000000 56%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+    color: #ffffff;
+    min-height: 100%;
+    overflow-x: hidden; 
+}
+
+.contenedor_principal {
+    background-image: url('/imgs/imgendefondo.png');
+    background-size: cover; 
+    background-position: center bottom;
+    min-height: 85rem; 
+    position: relative;
+    
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+}
+
+/* sombra para la fotico del fondo */
+.capa_oscura {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.60); 
+    z-index: 1; 
+    padding-bottom: 3.125rem; /* 50px */
+}
+
+/* limita el ancho y centra el contenido principal */
+.contenedor_centrado {
+    max-width: 1200px;
+    width: 96%; 
+    margin: 0 auto;
+    padding: 0 1.25rem; 
+    position: relative; 
+    z-index: 2; 
+}
+
+
+.barra_navegacion {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: nowrap; 
+    padding: 1.25rem 0; /* 20px */
+}
+
+.logotipo {
+    font-weight: bold;
+    font-size: 1.2rem; 
+    margin-right: 1.25rem; /* 20px */
+}
+
+.menu_enlaces {
+    background-color: rgba(40, 40, 40, 0.7);
+    padding: 0.625rem 1.25rem; 
+    border-radius: 0.75rem; /* 12px */
+    max-width: 100%; 
+}
+
+.lista_navegacion {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    white-space: nowrap; 
+    gap: 1.875rem; /* 30px */
+}
+
+.lista_navegacion li {
+    display: inline; 
+}
+
+.lista_navegacion a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 0.3125rem 0.625rem; /* 5px 10px */
+}
+
+.lista_navegacion .activo {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 0.5rem; /* 8px */
+}
+
+.iconos_derecha button {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    margin-left: 0.9375rem; /* 15px */
+    font-size: 1.2rem;
+}
+
+
+
+
+.seccion_detalle_producto {
+    padding-top: 3.125rem; /* 50px */
+    padding-bottom: 5rem; /* 80px */
+}
+
+.nombre_producto {
+    font-size: 3.5rem; 
+    font-weight: 800;
+    margin-bottom: 0.3125rem; /* 5px */
+}
+
+.precio_producto {
+    font-size: 1.875rem; /* 30px */
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 2.5rem; /* 40px */
+}
+
+.contenedor_columnas {
+    display: grid;
+    /* Divide en dos columnas: Imagen (1fr) y Info (1.5fr) */
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 3.125rem; /* 50px */
+    align-items: flex-start;
+}
+
+
+
+.columna_imagen_producto {
+    display: flex;
+    flex-direction: row; 
+    gap: 1.25rem; /* 20px */
+}
+
+.miniaturas {
+    display: flex;
+    flex-direction: column; 
+    gap: 1rem; /* 16px */
+}
+
+.miniatura_item {
+    width: 5rem; /* 80px */
+    height: 5rem; /* 80px */
+    object-fit: cover;
+    border-radius: 0.5rem;
+    opacity: 0.7;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.imagen_principal_contenedor {
+    background-color: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(8px);
+    border-radius: 2rem; 
+    padding: 1.875rem; /* 30px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; 
+}
+
+.imagen_principal {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem;
+}
+
+
+
+.tags_producto {
+    margin-bottom: 1.875rem; /* 30px */
+    display: flex;
+    gap: 1rem;
+}
+
+.tag {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.3125rem 0.9375rem; /* 5px 15px */
+    border-radius: 1.25rem; /* 20px */
+    color: #000;
+    background-color: #8ac926;
+}
+
+
+.descripcion_detallada {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 3.125rem; /* 50px */
+}
+
+.opciones_tamanos {
+    display: flex;
+    gap: 0.625rem; /* 10px */
+    margin-bottom: 1.875rem; /* 30px */
+}
+
+.boton_tamano {
+    background-color: #333;
+    color: #ccc;
+    border: 1px solid #555;
+    padding: 0.625rem 1.25rem; /* 10px 20px */
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    flex-grow: 1; 
+}
+
+
+.boton_tamano:hover{
+ background-color: rgba(86, 198, 26, 0.85); 
+}
+
+.boton_carrito {
+    width: 100%;
+    background-color: #4a9e25; /* Verde oscuro */
+    color: #fff;
+    border: none;
+    padding: 1rem; /* 16px */
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton_carrito:hover{
+ background-color: rgba(86, 198, 26, 0.85); 
+}
+
+
+.pie_pagina {
+    background-color: #000; 
+    padding: 1.25rem 0; 
+    text-align: center;
+    font-size: 0.8rem;
+    z-index: 3; 
+    width: 100%; 
+}
+
+.pie_pagina p {
+    color: #ccc;
+    margin: 0;
+}
+
+
+/* === RESPONSIVIDAD MÓVIL === */
+
+@media (max-width: 1024px) {
+    .contenedor_columnas {
+        grid-template-columns: 1fr;
+        gap: 2.5rem; /* 40px */
+    }
+    
+    .columna_imagen_producto {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .miniaturas {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .nombre_producto {
+        font-size: 3rem; 
+    }
+    
+    .barra_navegacion {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 0.625rem; 
+        width: 100%;
+    }
+    
+    .menu_enlaces {
+        background-color: transparent;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .lista_navegacion {
+        width: 100%; 
+        flex-wrap: wrap; 
+        gap: 0.5rem; 
+    }
+    
+    .iconos_derecha {
+        align-self: flex-end; 
+    }
+}
