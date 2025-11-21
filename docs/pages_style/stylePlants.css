@@ -41,20 +41,23 @@ body {
 /* limita el ancho y centra el contenido principal */
 .contenedor_centrado {
     max-width: 1200px;
-    width: 96%; 
+    width: 100%; 
     margin: 0 auto;
     padding: 0 1.25rem; 
     position: relative; 
     z-index: 2; 
+    /* correccion para que no se me salga*/
+    box-sizing: border-box; 
 }
-
 
 .barra_navegacion {
     display: flex; 
     justify-content: space-between; 
     align-items: center;
-    flex-wrap: nowrap; 
+    /* intento de que el wrap me acomode las cosas bien y no se me rompa todo jeje */
+    flex-wrap: wrap; 
     padding: 1.25rem 0; /* 20px */
+    width: 100%;
 }
 
 .logotipo {
@@ -123,7 +126,7 @@ body {
 }
 
 .tarjeta_planta {
-    /* cristal efcto */
+    /* efcto de vidrio bien mamon jeje*/
     background-color: rgba(255, 255, 255, 0.05); 
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -203,9 +206,12 @@ body {
     color: #ccc;
     margin: 0;
 }
+/*  Esto arregla el desborde a la derecha en version de celular */
+* {
+    box-sizing: border-box;
+}
 
-
-@media (max-width: 1024px) {
+@media (max-width: 1250px) {
     
     .cuadricula_plantas {
         grid-template-columns: repeat(2, 1fr); 
@@ -233,10 +239,8 @@ body {
     .iconos_derecha {
         align-self: flex-end; 
     }
-}
 
-@media (max-width: 600px) {
-    .cuadricula_plantas {
+     .cuadricula_plantas {
         grid-template-columns: 1fr;
     }
     

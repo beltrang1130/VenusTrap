@@ -167,7 +167,10 @@ body {
     margin: 0;
 }
 
-
+/*  Esto arregla el desborde a la derecha en version de celular */
+* {
+    box-sizing: border-box;
+}
 
 
 @media (max-width: 1024px) {
